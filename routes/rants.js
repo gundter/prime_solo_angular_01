@@ -16,5 +16,12 @@ router.post('/', function(req, res, next){
    });
 });
 
+router.delete('/:id', function(req, res, next){
+    Rants.findByIdAndRemove(req.params.id, req.body, function(err, rants){
+        if (err) return next(err);
+        res.json(rants);
+    });
+});
+
 console.log('Rants route loaded');
 module.exports = router;

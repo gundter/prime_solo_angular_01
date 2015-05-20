@@ -1,5 +1,8 @@
-<div>
-    <label for="username">Username:</label>
-    <input type="text" ng-model="username" name="username" id="username" placeholder="Enter username here"/>
-    <textarea id="rant" name="rant" ng-model="rant" placeholder="Enter your rant here!!"></textarea>
+<div ng-repeat="rant in posts | orderBy: '-date_submitted'">
+    <div class="well">
+        <p>{{rant.date_submitted | date: "MM/dd/yyyy 'at' h:mma"}}:</p>
+        <p>{{rant.username}} posted:</p>
+        <p>{{rant.rantInfo}}</p>
+        <button ng-model="rant._id" class="btn btn-warning" ng-click="deletePost(rant)">Delete Post</button>
+    </div>
 </div>

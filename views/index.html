@@ -16,11 +16,10 @@
         <label for="username">Username:</label>
         <input type="text" ng-model="rant.username" name="username" id="username" placeholder="Enter username here"/><br/>
         <textarea id="rant" ng-model="rant.rantInfo" name="rant" placeholder="Enter your rant here!!"></textarea><br/>
-        <button class="btn btn-default" ng-click="submitPost(rant)">Submit</button>
+        <button class="btn btn-default" ng-click="submitPost(rant)" data-ng-click="rant.username='', rant.rantInfo=''">Submit</button>
         <button class="btn btn-default" ng-click="getData()">Get Posts</button>
-        <div ng-repeat="rant in posts | orderBy: '-date_submitted'">
-            <p class="well">On {{rant.date_submitted | date: "MM/dd/yyyy 'at' h:mma"}} {{rant.username}} posted: {{rant.rantInfo}}</p>
-        </div>
+
+        <div ng-include="'/views/template.html'"></div>
 
 
     </div>

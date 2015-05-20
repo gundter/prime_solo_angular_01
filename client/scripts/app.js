@@ -17,18 +17,14 @@ myApp.controller('IndexController', ["$scope", "$http", function($scope, $http){
             console.log(res.data);
             return res.data;
         });
-        $scope.rant.username = '';
-        $scope.rant.rantInfo = '';
     };
 
     $scope.submitPost = function(rant){
         console.log("Starting this thing out");
         return $http.post('/rants', rant).then($scope.getData());
-            /*.then(function(res){
-            if(res.status !== 200){
-                throw new Error ("Post failed");
-            }
-            console.log(res);
-        });*/
+    };
+
+    $scope.deletePost = function(rant){
+        return $http.delete('/rants/' + rant._id, rant).then($scope.getData());
     };
 }]);
