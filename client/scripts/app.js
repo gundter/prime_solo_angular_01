@@ -13,6 +13,8 @@ myApp.controller('IndexController', ["$scope", "$http", function($scope, $http){
                 throw new Error ("Sad Face :(");
             }
 
+            $scope.rant = {};
+
             $scope.posts = res.data;
             console.log(res.data);
             return res.data;

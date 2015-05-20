@@ -1,11 +1,18 @@
 body {
-  background-color: #74CEB7;
+  background-color: #040002;
+    caption-side: #E8B96A;
+}
+
+img {
+    background-color: inherit;
 }
 
 .jumbotron {
-  background-color: #FFFFCB;
+  background-color: #E8B96A;
+  color: #5C0F00;
+
 }
 
 .well {
-  background-color: #2C858D;
+  background-color: #BC5D15;
 }

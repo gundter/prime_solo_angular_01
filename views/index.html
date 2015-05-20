@@ -9,15 +9,10 @@
 <body>
     <div class="container" ng-controller="IndexController">
         <div class="jumbotron text-center">
-            <h1>Rant!</h1>
+            <img src="/images/rantlogo.png">
         </div>
 
-
-        <label for="username">Username:</label>
-        <input type="text" ng-model="rant.username" name="username" id="username" placeholder="Enter username here"/><br/>
-        <textarea id="rant" ng-model="rant.rantInfo" name="rant" placeholder="Enter your rant here!!"></textarea><br/>
-        <button class="btn btn-default" ng-click="submitPost(rant)">Submit</button>
-        <button class="btn btn-default" ng-click="getData()">Get Posts</button>
+        <div ng-include="'/views/form.html'"></div>
 
         <div ng-include="'/views/template.html'"></div>
 

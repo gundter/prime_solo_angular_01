@@ -49,7 +49,8 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: "client",
                 src: [
-                    "views/template.html"
+                    "views/template.html",
+                    "views/form.html"
                 ],
                 "dest": "public/"
             }
