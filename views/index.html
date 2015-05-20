@@ -18,7 +18,7 @@
         <textarea id="rant" ng-model="rant.rantInfo" name="rant" placeholder="Enter your rant here!!"></textarea><br/>
         <button class="btn btn-default" ng-click="submitPost(rant)">Submit</button>
         <button class="btn btn-default" ng-click="getData()">Get Posts</button>
-        <div ng-repeat="rant in posts">
+        <div ng-repeat="rant in posts | orderBy: '-date_submitted'">
             <p class="well">On {{rant.date_submitted | date: "MM/dd/yyyy 'at' h:mma"}} {{rant.username}} posted: {{rant.rantInfo}}</p>
         </div>
 
